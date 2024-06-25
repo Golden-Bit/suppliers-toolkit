@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dettagli Fornitore</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            margin-bottom: 20px;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .section-title {
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        .note {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Dettagli Fornitore</h1>
+    </header>
+    <section>
+        <div class="section-title">
+            <h2>Recapiti</h2>
+        </div>
+        <p><strong>Nome:</strong> {{ name }}</p>
+        <p><strong>Indirizzo:</strong> {{ address }}</p>
+        <p><strong>Telefono:</strong> {{ phone }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Sito Web:</strong> <a href="{{ website }}" target="_blank">{{ website }}</a></p>
+        <p class="note"><strong>Note sui recapiti:</strong> {{ contact_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Qualità</h2>
+        </div>
+        <p><strong>Qualità:</strong> {{ quality }} / 5</p>
+        <p class="note"><strong>Note sulla qualità:</strong> {{ quality_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Prezzo</h2>
+        </div>
+        <p><strong>Prezzo (in denaro):</strong> {{ price_money }} {{ currency }}</p>
+        <p><strong>Prezzo (in stelle):</strong> {{ price_stars }} / 5</p>
+        <p class="note"><strong>Note sul prezzo:</strong> {{ price_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Affidabilità</h2>
+        </div>
+        <p><strong>Affidabilità:</strong> {{ reliability }} / 5</p>
+        <p class="note"><strong>Note sull'affidabilità:</strong> {{ reliability_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Consegna</h2>
+        </div>
+        <p><strong>Tempi di Consegna:</strong> {{ delivery_times }}</p>
+        <p class="note"><strong>Note sulla consegna:</strong> {{ delivery_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Categorie</h2>
+        </div>
+        <p><strong>Categorie:</strong> {{ category }}</p>
+        <p class="note"><strong>Note sulle categorie:</strong> {{ category_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Note Generali</h2>
+        </div>
+        <p class="note">{{ general_notes }}</p>
+    </section>
+    <section>
+        <div class="section-title">
+            <h2>Campi Addizionali</h2>
+        </div>
+        {% for field_title, field_value in additional_fields.items() %}
+        <p><strong>{{ field_title }}:</strong> {{ field_value }}</p>
+        {% endfor %}
+    </section>
+</body>
+</html>

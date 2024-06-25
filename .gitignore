@@ -1,0 +1,51 @@
+# Escludi directory dell'ambiente virtuale
+venv/
+.venv/
+
+# Escludi file di configurazione specifici di PyCharm
+.idea/
+
+# Escludi file di configurazione specifici di VS Code
+.vscode/
+
+# Escludi file di cache e bytecode di Python
+__pycache__/
+*.py[cod]
+
+# Escludi file di log
+*.log
+
+# Escludi file di database SQLite
+*.sqlite3
+
+# Escludi file di pacchetti e distribuzione
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Escludi file di virtualenv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Escludi file di configurazione delle dipendenze
+poetry.lock
+poetry.toml
+
+# Escludi file di backup e swap
+*~
+*.bak
+*.swp
+*.swo
+
+# Escludi file di editor specifici
+*.sublime-project
+*.sublime-workspace
